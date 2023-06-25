@@ -1,0 +1,1026 @@
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  background: #FDFDFD;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+body.menu-active .container {
+  transform: scale(0.9);
+}
+
+.container .inner {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.nav {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  margin: 0;
+  padding: 0 25px;
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+.nav a {
+  display: inline-block;
+  height: 75px;
+  line-height: 75px;
+  font-size: 30px;
+  padding: 0 25px;
+  color: #212121;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  
+  transition: all 0.32s ease;
+}
+
+body:not(.menu-active) .nav a.menu-activator:hover {
+  transform: rotate(90deg);
+}
+
+body.menu-active .nav a.menu-activator {
+  transform: rotate(90deg);
+}
+
+.nav a.white {
+  color: #FAFAFA;
+}
+
+body.menu-active .nav a.white {
+  color: #212121;
+  transition: all 0.15s ease;
+}
+
+.nav a.link {
+  float: right;
+  position: relative;
+  text-align: center;
+}
+
+.nav a.link i {
+  position: absolute;
+  display: block;
+  transform: translateX(-50%);
+  
+  transition: all 0.32s ease;
+}
+
+.nav a.link i.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav a.link:hover i {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav a.link:hover i.hidden {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav i.ion-cube {
+  display: inline-block;
+  position: absolute;
+  height: 75px;
+  line-height: 75px;
+  font-size: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container .inner .panel {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  width: 60%;
+  float: left;
+  transform: skew(-20deg);
+}
+
+.container .inner .panel.panel-left {
+  margin-left: -10%;
+}
+
+.container .inner .panel .panel-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) skew(20deg);
+}
+
+.container .inner .panel.panel-left .panel-content .image-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  opacity: 0.95;
+  background-image: url('http://uplusion23.net/images/RickGenestSm.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.container .inner .panel.panel-right {
+  margin-right: -10%;
+  background: #1B1B1B;
+}
+
+.container .inner .panel.panel-right .panel-content .form {
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  width: 300px;
+  min-height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-25%);
+}
+
+.container .inner .panel.panel-right .panel-content .form h1 {
+  display: block;
+  margin: 0 0 45px 0;
+  color: #B1B1B1;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.group { 
+  position: relative; 
+  margin-bottom: 25px; 
+}
+
+input {
+  font-size: 13px;
+  height: 25px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #B1B1B1;
+  color: #B1B1B1;
+  background: rgba(0,0,0,0);
+  opacity: 0.5;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  opacity: 1;
+}
+
+label {
+  color: #B1B1B1; 
+  font-size: 13px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 15px;
+  opacity: 0.5;
+  transition: 0.2s ease all; 
+  -moz-transition: 0.2s ease all; 
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top: -10px;
+  font-size: 12px;
+  color: #B1B1B1;
+  opacity: 1;
+}
+
+.highlight {
+  position: absolute;
+  height: 60%; 
+  width: 100px; 
+  top: 25%; 
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from { background:#B1B1B1; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background:#B1B1B1; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background:#B1B1B1; }
+  to 	{ width:0; background:transparent; }
+}
+
+a.send-btn {
+  float: right;
+  color: #B1B1B1;
+  transition: 0.2s ease;
+}
+
+a.send-btn:hover {
+  color: #FAFAFA;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+  transition: all 0.33s ease;
+}
+
+.menu::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(240,240,240,0.0);
+  
+  transition: all 0.45s ease;
+}
+
+body.menu-active .menu {
+  left: 0;
+}
+
+body.menu-active .menu::before {
+  background: rgba(240,240,240,0.9);
+}
+
+
+
+
+
+
+/* RESET - tweaked to not reset padding on th and td */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+th, td {
+	margin: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* GENERAL */
+
+body {
+	font-size: 18px;
+	line-height: 1.3;
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		font-size: 15px;
+	}
+}
+
+input,
+textarea,
+select,
+button {
+	font-size: 1em;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="input"],
+textarea,
+select {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+}
+
+a {
+	transition: 200ms;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+/* HEADER */
+
+.page-header-wrapper {
+	padding: 1em;
+	position: relative;
+	z-index: 2;
+}
+
+.page-header {
+	max-width: 900px;
+	margin: 0 auto;
+	line-height: 1.5;
+}
+
+.site-name {
+	font-weight: bold;
+}
+
+.no-js .site-nav {
+	overflow: hidden;
+}
+
+.no-js .site-nav li {
+	float: left;
+	margin: 0 1em 0 0;
+}
+
+.no-js .site-nav li.active,
+.no-js .site-nav li.active * {
+	clear: both;
+	float: none;
+}
+
+.js .site-nav li {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+}
+
+.js .site-nav > ul > li {
+	margin: 0 1em 0 0;
+}
+
+.site-nav {
+	font-weight: bold;
+}
+
+.site-nav a {
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	font-weight: normal;
+}
+
+.site-nav .active > a,
+.site-nav a:hover {
+	border-bottom: 1px solid;
+}
+
+.site-nav a:after {
+	font-size: 0.6em;
+	display: inline-block;
+	margin-left: 0.5em;
+	vertical-align: middle;
+}
+
+.site-nav > ul li > a:after {
+	content: "\25BC";
+}
+
+.site-nav ul ul li > a:after {
+	content: "\25BA";
+}
+
+.site-nav li > a:only-child:after {
+	content: "";
+	display: none;
+}
+
+.lt-ie9 .site-nav a:after {
+	content: "";
+	display: none;
+}
+
+.js .site-nav ul ul li {
+	padding: 0.5em 1em;
+	display: block;
+}
+
+.no-js .site-nav ul ul li {
+	padding: 0 0 0 1em;
+}
+
+.js .site-nav ul ul {
+	position: absolute;
+	z-index: 2;
+	background: #fff;
+	width: 200px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+	border-radius: 3px;
+	transition: opacity 300ms, transform 300ms;
+}
+
+.js .site-nav li ul ul {
+	transform: translate(-1em, 0);
+}
+
+.js .site-nav .nav-open {
+	height: auto;
+	overflow: visible;
+	opacity: 1;
+	transform: translate(0);
+}
+
+.js .site-nav li ul ul {
+	left: 170px;
+	top: 0;
+}
+
+.subnav-on-other-side {
+	left: -190px !important;
+}
+
+.slicknav_menu {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.js .page-header-wrapper {
+		display: block;
+	}
+	.js .slicknav_menu {
+		display: none;
+	}
+}
+
+.js.touchevents .page-header-wrapper {
+	display: none;
+}
+
+.js.touchevents .slicknav_menu {
+	display: block;
+}
+
+
+/* BANNER */
+
+.banner-wrapper-background {
+	position: relative;
+	overflow: hidden;
+}
+
+/* Nice blurred banner background extension for modern browsers */
+.cssfilters .banner-wrapper-background:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	background-size: contain;
+
+	-webkit-filter: blur(50px);
+	-moz-filter: blur(50px);
+	-ms-filter: blur(50px);
+	-o-filter: blur(50px);
+	filter: blur(50px);
+}
+
+@media screen and (max-width: 1400px) {
+	/* No need for the overhead of a blurred background when it won't be visible. */
+	.cssfilters .banner-wrapper-background:before {
+		background: none;
+	}
+}
+
+.banner-wrapper-size {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.banner {
+	padding-bottom: 32.56038647343%;
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	position: relative;
+	zoom: 1;
+}
+
+/* This block is given a gradient fade in the theme CSS file */
+.banner-wrapper-background:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	right: 0;
+	height: 20%;
+}
+
+
+/* MAIN CONTENT AREA */
+
+.main-content-wrapper {
+	padding: 0 1em;
+}
+
+/* Static sub nav */
+.static-sub-nav {
+	font-size: 0.9em;
+	margin-bottom: 1em;
+}
+
+.static-sub-nav ul {
+	border-bottom: 1px dotted #ccc;
+	padding: 0 0 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.static-sub-nav li {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}
+
+.static-sub-nav a {
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	font-weight: normal;
+}
+
+.static-sub-nav .active > span,
+.static-sub-nav a:hover {
+	border-bottom: 1px solid;
+}
+
+/* Hide menu 3 when nested inside menu 2, as menu 3 is displayed separately beneath */
+.static-sub-nav #bbt_menu2 #bbt_menu3 {
+	display: none;
+}
+
+/* Main content box */
+
+.main-content {
+	position: relative;
+	max-width: 900px;
+	padding: 1em;
+	overflow: hidden;
+	margin: -2em auto 0 auto;
+	line-height: 1.4;
+	border-radius: 3px;
+}
+
+@media screen and (max-width: 600px) {
+	.main-content-wrapper {
+		padding: 0 0.5em;
+		margin-top: 0;
+	}
+	.main-content {
+		margin: 0;
+		padding: 0.75em;
+	}
+}
+
+
+/* FOOTER */
+
+.page-footer-wrapper {
+	padding: 0 1em;
+	position: relative;
+}
+
+.page-footer {
+	max-width: 900px;
+	padding: 1em;
+	overflow: hidden;
+	margin: 2em auto 0;
+	position: relative;
+	border-radius: 3px;
+}
+
+.page-footer a {
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+
+.page-footer a:hover {
+	border-bottom-color: transparent;
+}
+
+.footer-column {
+	width: 33.3%;
+	float: left;
+	margin: 0 0 1em;
+}
+
+.footer-logo {
+	text-align: right;
+}
+
+.footer-credit {
+	clear: both;
+	text-align: right;
+	font-size: 0.8em;
+}
+
+@media screen and (max-width: 600px) {
+	.page-footer-wrapper {
+		padding: 0 0.5em;
+	}
+	.page-footer {
+		margin: 0.5em 0 0;
+		padding: 0.75em;
+	}
+	.footer-column {
+		float: none;
+		width: 100%;
+	}
+	.footer-logo,
+	.footer-credit {
+		text-align: left;
+	}
+}
+
+
+/* CMS */
+
+.cms h1 {
+	font-size: 2em;
+	margin-bottom: 0.5em;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 0.2em;
+}
+
+.cms h2 {
+	margin-bottom: 0.5em;
+	font-size: 1.5em;
+}
+
+.cms h3 {
+	font-weight: bold;
+	margin-bottom: 0.5em;
+}
+
+.cms p {
+	margin-bottom: 1em;
+}
+
+.cms table[border="1"] td {
+	border: 1px solid #ccc;
+}
+
+.cms dl:last-child,
+ol:last-child,
+p:last-child,
+ul:last-child {
+	margin-bottom: 0;
+}
+
+.cms table {
+	width: 100%;
+}
+
+.cms iframe {
+	max-width: 100%;
+}
+
+.cms ul,
+.cms ol {
+	padding-left: 2em;
+	margin-bottom: 0.5em;
+	overflow: hidden; /* required for when list is next to floated image */
+}
+
+.cms ul {
+	list-style-type: disc;
+}
+
+.cms ol {
+	list-style-type: decimal;
+}
+
+.cms sub,
+.cms sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+
+.cms sup {
+	top: -0.5em;
+}
+
+.cms sub {
+	bottom: -0.25em;
+}
+
+.cms blockquote {
+	margin-bottom: 0.5em !important;
+}
+
+.cms i,
+.cms em {
+	font-style: italic;
+}
+
+.cms b,
+.cms strong {
+	font-weight: bold;
+}
+
+.cms a {
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+
+.cms a:hover {
+	border-bottom-color: transparent;
+}
+
+
+/* BBT PLUGINS */
+
+.bbt-podcast input[name=search] {
+	width: auto;
+}
+
+.bbt-podcast input[type=radio] {
+	margin-right: 6px;
+	margin-left: 1em;
+	margin-bottom: 10px;
+}
+
+.bbt-podcast input[type=radio]:first-of-type {
+	margin-left: 0;
+}
+
+.bbt-podcast input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+
+/* OTHER PLUGINS */
+
+/*!
+ * SlickNav Responsive Mobile Menu v1.0.3
+ * (c) 2015 Josh Cope
+ * licensed under MIT
+ */
+.slicknav_btn {
+  position: relative;
+  display: block;
+  vertical-align: middle;
+  float: right;
+  padding: 0.438em 0.625em 0.438em 0.625em;
+  line-height: 1.125em;
+  cursor: pointer; }
+  .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
+    margin-top: 0.188em; }
+
+.slicknav_menu {
+  *zoom: 1; }
+  .slicknav_menu .slicknav_menutxt {
+    display: block;
+    line-height: 1.188em;
+    float: left; }
+  .slicknav_menu .slicknav_icon {
+    float: left;
+    margin: 0.188em 0 0 0.438em; }
+  .slicknav_menu .slicknav_no-text {
+    margin: 0; }
+  .slicknav_menu .slicknav_icon-bar {
+    display: block;
+    width: 1.125em;
+    height: 0.125em;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+  .slicknav_menu:before {
+    content: " ";
+    display: table; }
+  .slicknav_menu:after {
+    content: " ";
+    display: table;
+    clear: both; }
+
+.slicknav_nav {
+  clear: both; }
+  .slicknav_nav ul {
+    display: block; }
+  .slicknav_nav li {
+    display: block; }
+  .slicknav_nav .slicknav_arrow {
+    font-size: 0.8em;
+    margin: 0 0 0 0.4em; }
+  .slicknav_nav .slicknav_item {
+    cursor: pointer; }
+    .slicknav_nav .slicknav_item a {
+      display: inline; }
+  .slicknav_nav .slicknav_row {
+    display: block; }
+  .slicknav_nav a {
+    display: block; }
+  .slicknav_nav .slicknav_parent-link a {
+    display: inline; }
+
+.slicknav_brand {
+  float: left; }
+
+.slicknav_menu {
+  font-size: 16px;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 5px; }
+  .slicknav_menu * {
+    box-sizing: border-box; }
+  .slicknav_menu .slicknav_menutxt {
+    color: #333;
+    font-weight: bold;
+    text-shadow: 0 1px 3px #ddd; }
+  .slicknav_menu .slicknav_icon-bar {
+    background-color: #333; }
+
+.slicknav_btn {
+  margin: 5px 5px 6px;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #ddd; }
+
+.slicknav_nav {
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875em;
+  list-style: none;
+  overflow: hidden; }
+  .slicknav_nav ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 0 20px; }
+  .slicknav_nav .slicknav_row {
+    padding: 5px 10px;
+    margin: 2px 5px; }
+    .slicknav_nav .slicknav_row:hover {
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      background: #ddd;
+      color: #333; }
+  .slicknav_nav a {
+    padding: 5px 10px;
+    margin: 2px 5px;
+    text-decoration: none;
+    color: #333; }
+    .slicknav_nav a:hover {
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      background: #ddd;
+      color: #000; }
+  .slicknav_nav .slicknav_txtnode {
+    margin-left: 15px; }
+  .slicknav_nav .slicknav_item a {
+    padding: 0;
+    margin: 0; }
+  .slicknav_nav .slicknav_parent-link a {
+    padding: 0;
+    margin: 0; }
+
+.slicknav_brand {
+  color: #333;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 7px 12px;
+  height: 44px; }
+
+
+
+/* Slicknav custom overrides */
+.slicknav_btn,
+.slicknav_menu .slicknav_menutxt {
+	text-shadow: none;
+}
+.slicknav_menu .slicknav_icon-bar {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.slicknav_nav a {
+	padding: 8px 10px;
+}
+.slicknav_txtnode {
+	padding: 8px 0;
+}
+.slicknav_brand {
+	height: auto;
+}
+.slicknav_menu .active .slicknav_parent-link a:first-child,
+.slicknav_txtnode.active {
+	font-weight: bold;
+}
